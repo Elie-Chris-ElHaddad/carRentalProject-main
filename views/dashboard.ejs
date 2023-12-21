@@ -1,0 +1,44 @@
+<nav class="navbar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+    </ul>
+</nav>
+<h1>List of Cars</h1>
+<table id="carTable">
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    // Fetch data from the API and populate the table
+    fetch('/api/car/getAllCars')
+        .then(response => response.json())
+        .then(data => {
+            const carTableBody = document.querySelector('#carTable tbody');
+
+            // Clear existing rows
+            carTableBody.innerHTML = '';
+
+            // Populate the table with fetched data
+            data.forEach(car => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${car.Car_ID}</td>
+                    <td>${car.Make}</td>
+                    <td>${car.Model}</td>
+                    <td>${car.Year}</td>
+                    <td>${car.Price_per_day}</td>
+                    <td>${car.Availability}</td>
+                `;
+                carTableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+</script>

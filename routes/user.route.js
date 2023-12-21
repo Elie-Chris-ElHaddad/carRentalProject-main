@@ -38,9 +38,9 @@ router.get('/getAllUsers', userController.getAllUsersController);
  * @param {string} path - Express path.
  * @param {Callback} middleware - Express middleware.
  */
-router.post('/addUser',userController.authenticateToken, insertUserValidation,  userController.addUserController);
+router.post('/addUser', insertUserValidation,  userController.addUserController);
 
-router.post('/getUserLogin' , userController.authenticateToken, userController.getUserLoginController);
+router.post('/getUserLogin' , userController.getUserLoginController);
 
 /**
  * Route to update an existing user.
