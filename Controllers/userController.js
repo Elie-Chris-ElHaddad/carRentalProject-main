@@ -1,4 +1,5 @@
 const { validationResult } = require("express-validator");
+const jwt = require("jsonwebtoken");
 const {
   addUser,
   getAllUsers,
@@ -144,26 +145,29 @@ const getUserLoginController = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await checkLogin(email, password);
+    const token = jwt.sign(email , process.env.ACCESS_TOKEN_SECRET);
     // res.status(200).json({ user });
     if(user){
-      res.redirect(`/home`);
+      res.redirect(`/dashboard?token=${token}`);
     }else{
       res.redirect(`/login`);
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error });
   }
 };
-const authenticateToken = async(req,res,next)=>{
-  const authHeader = req.headers['authorization']
-  const token = authHeader && authHeader.split(' ')[1];
-  if (token==null) 
-  return res.sendStatus(401)
-   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user)=>{
-    if (err) return res.sendStatus(403)
-    req.user=user
-    next()
-})}
+
+const verifyToken = async(token)=>{
+  try{
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    return decoded;
+  }catch(e){
+    console.error('Token is not valid' , e.message);
+    return null
+  }
+}
+
 // Export the controller functions for use in routes
 module.exports = {
   getUserByIdController,
@@ -172,5 +176,6 @@ module.exports = {
   updateUserController,
   deleteUserController,
   getUserLoginController,
-  authenticateToken
+  // authenticateToken,
+  verifyToken
 };
