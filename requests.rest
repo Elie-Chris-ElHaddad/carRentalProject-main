@@ -1,0 +1,11 @@
+GET http://localhost:3001/posts
+Authorization: Bearer
+###
+
+POST http://localhost:3001/
+Content-Type: application/json
+
+{
+   "email":"Eliohaddad237@gmail.com",
+   "password":"jssisj12@D"
+}
