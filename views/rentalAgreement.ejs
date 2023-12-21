@@ -9,11 +9,11 @@
 <table id="agreementTable">
     <thead>
         <tr>
-            <th>Agreement_ID</th>
+            <th>Agreement_id</th>
             <th>Pick_up_Date</th>
             <th>Return_Date</th>
             <th>Total_Price</th>
-            <th>User_ID</th>
+            <th>User_id</th>
             <th>Car_ID</th>
         </tr>
     </thead>
@@ -34,7 +34,7 @@
             data.forEach(rentalAgreement => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${rentalAgreement.Agreement_ID}</td>
+                    <td>${rentalAgreement.Agreement_id}</td>
                     <td>${rentalAgreement.Pick_up_Date}</td>
                     <td>${rentalAgreement.Return_Date}</td>
                     <td>${rentalAgreement.Total_Price}</td>
