@@ -1,0 +1,7 @@
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    margin : auto;
+    margin-top: 5%;
+    width: 50%;
+}
