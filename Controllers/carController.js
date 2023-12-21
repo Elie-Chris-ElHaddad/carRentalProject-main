@@ -74,7 +74,7 @@ const addCarController = async (req, res) => {
       Price_per_day
     );
     // Send a JSON response with the newly added car
-    res.status(200).json({ response });
+    res.redirect(`/dashboard`);
   } catch (e) {
     res.status(500).json({ e });
   }

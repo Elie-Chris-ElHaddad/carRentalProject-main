@@ -1,16 +1,43 @@
 <nav class="navbar">
     <ul class="nav-list">
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/RentalAgreement" class="nav-link">Rental Agreement</a></li>
     </ul>
 </nav>
 <h1>List of Cars</h1>
+<button id="openFormButton">Add a Car</button>
+
+<div id="carFormContainer" style="display: none;">
+    <h2>Add a Car</h2>
+    <form id="carForm" action="api/car/addCar" method="post">
+        <label for="Make">Make:</label>
+        <input type="text" id="Make" name="Make" required>
+
+        <label for="Model">Model:</label>
+        <input type="text" id="Model" name="Model" required>
+
+        <label for="Year">Year:</label>
+        <input type="number" id="Year" name="Year" required>
+
+        <label for="Availability">Availability:</label>
+        <input type="text" id="Availability" name="Availability" required>
+
+        <label for="Price_per_day">Price_per_day:</label>
+        <input type="number" id="Price_per_day" name="Price_per_day" required>
+
+        <button type="submit">Add Car</button>
+    </form>
+</div>
+
 <table id="carTable">
     <thead>
         <tr>
+            <th>car_ID</th>
             <th>Make</th>
             <th>Model</th>
             <th>Year</th>
-            <th>Price</th>
+            <th>Price_per_day</th>
+            <th>Availability</th>
         </tr>
     </thead>
     <tbody>
@@ -41,4 +68,13 @@
             });
         })
         .catch(error => console.error('Error fetching data:', error));
+        
+        const openFormButton = document.getElementById('openFormButton');
+        const carFormContainer = document.getElementById('carFormContainer');
+
+        openFormButton.addEventListener('click', () => {
+            carFormContainer.style.display = 'block';
+        });
+
+
 </script>
