@@ -64,6 +64,5 @@ router.patch('/updateRentalAgreement', updateRentalAgreementValidation, Rental_A
  */
 router.delete('/deleteRentalAgreement', Rental_AgreementController.deleteRentalAgreementController);
 
-
 //Exports the rentalAgreementRouter for use in other modules.
 module.exports = router;

@@ -1,0 +1,51 @@
+
+<nav class="navbar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/RentalAgreement" class="nav-link">Rental Agreement</a></li>
+    </ul>
+</nav>
+<h1>Rental Agreements</h1>
+<table id="agreementTable">
+    <thead>
+        <tr>
+            <th>agreement_ID</th>
+            <th>Pick_up_Date</th>
+            <th>Return_Date</th>
+            <th>Total_Price</th>
+            <th>User_ID</th>
+            <th>Car_ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    // Fetch data from the API and populate the table
+    fetch('/api/rentalAgreement/allRentalAgreements')
+        .then(response => response.json())
+        .then(data => {
+            const agreementTableBody = document.querySelector('#agreementTable tbody');
+
+            // Clear existing rows
+            agreementTableBody.innerHTML = '';
+
+            // Populate the table with fetched data
+            data.forEach(rentalAgreement => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${rentalAgreement.agreement_ID}</td>
+                    <td>${rentalAgreement.Pick_up_Date}</td>
+                    <td>${rentalAgreement.Return_Date}</td>
+                    <td>${rentalAgreement.Total_Price}</td>
+                    <td>${rentalAgreement.User_ID}</td>
+                    <td>${rentalAgreement.Car_ID}</td>
+                `;
+                agreementTableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+        
+    
+
+</script>

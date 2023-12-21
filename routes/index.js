@@ -16,4 +16,9 @@ router.get('/dashboard', (req, res) => {
   }
 })
 
+router.get('/RentalAgreement', (req, res) => {
+  res.render('rentalAgreement')
+});
+
+
 module.exports = router

@@ -176,3 +176,12 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+h1 {
+    color: white;
+}
+
+/* CSS for making td background white */
+td {
+    background-color: white;
+}
