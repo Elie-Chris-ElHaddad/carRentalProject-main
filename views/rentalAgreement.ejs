@@ -22,7 +22,7 @@
 </table>
 <script>
     // Fetch data from the API and populate the table
-    fetch('/api/rentalAgreement/allRentalAgreements')
+    fetch('/api/rentalAgreement/getAllRentalAgreements')
         .then(response => response.json())
         .then(data => {
             const agreementTableBody = document.querySelector('#agreementTable tbody');
