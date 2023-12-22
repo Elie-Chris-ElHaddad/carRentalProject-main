@@ -73,7 +73,7 @@ const addCarController = async (req, res) => {
       Availability,
       Price_per_day
     );
-    // Send a JSON response with the newly added car
+    // redirect the user back to the car details page
     res.redirect(`/dashboard`);
   } catch (e) {
     res.status(500).json({ e });

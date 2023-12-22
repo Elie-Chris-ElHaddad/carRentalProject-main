@@ -71,8 +71,8 @@ const addRentalAgreementController = async (req, res) => {
       Pick_up_Date,
       Return_Date
     );
-    // Send a JSON response with the newly added rental agreement
-    res.status(200).json({ response });
+    // Redirects the user back to the rental agreement details page
+    res.redirect(`/rentalAgreement`)
   } catch (error) {
     // Send a 500 Internal Server Error response with the error message
     res.status(500).json({error});

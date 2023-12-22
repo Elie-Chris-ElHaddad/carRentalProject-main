@@ -74,7 +74,7 @@ const addUserController = async (req, res) => {
     const response = await addUser(Name, Last_Name, Email, Phone, password);
     // Send a JSON response with the newly added use
     // res.status(200).json({ response });
-    res.redirect(`/home`);
+    res.redirect('/dashboard');
   } catch (error) {
     // Send a 500 Internal Server Error response with the error message
     res.status(500).json({ error });
@@ -140,19 +140,24 @@ const deleteUserController = async (req, res) => {
     res.status(500).json(error);
   }
 };
-
+// getUserLoginController function handles user login
 const getUserLoginController = async (req, res) => {
   try {
+    // Extract email and password from the request body
     const { email, password } = req.body;
+    // Check the login credentials
     const user = await checkLogin(email, password);
+     // Generate a JWT token with the email and the secret key
     const token = jwt.sign(email , process.env.ACCESS_TOKEN_SECRET);
-    // res.status(200).json({ user });
+    // If the user exists, redirect to the dashboard with the token as a query parameter
+    // Otherwise, redirect to the login page
     if(user){
       res.redirect(`/dashboard?token=${token}`);
     }else{
       res.redirect(`/login`);
     }
   } catch (error) {
+     // Handle errors and send a 500 Internal Server Error response
     console.log(error);
     res.status(500).json({ error });
   }

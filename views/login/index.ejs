@@ -1,4 +1,61 @@
 <%- include('../partials/nav.ejs')%>
+<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/signup.css">
+    <link rel="stylesheet" href="/login.css">
+<style>
+    body {
+        background-image: url('https://images.hdqwalls.com/download/land-rover-defender-90-v8-carpathian-edition-5k-1p-2560x1440.jpg');
+        font-family: Arial, sans-serif;
+    }
+
+    
+
+    .login-form {
+        background-color: #ffffff00;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+    }
+
+    .login-form h2 {
+        text-align: center;
+        color: #fefcfc;
+    }
+
+    .login-form label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #fdfdfd;
+        font-weight: bold;
+    }
+
+    .login-form input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .login-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .login-form button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <div class="login-container">
     <form class="login-form" action="/api/user/getUserLogin" method="post">
         <h2>Login</h2>

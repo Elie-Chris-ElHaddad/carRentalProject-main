@@ -1,23 +1,105 @@
 <%- include('../partials/nav.ejs')%>
+<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/signup.css">
+    <link rel="stylesheet" href="/login.css">
 <div class="signup-container">
+    <!-- Signup Form -->
     <form class="signup-form" action="/api/user/addUser" method="post">
-        <h2>Signup</h2>
-
+       <!-- Signup Form Heading -->
+        <h2>Sign Up</h2>
+        <!-- Name Input -->
         <label for="Name">First Name:</label>
         <input type="text" id="Name" name="Name" required>
-
+        <!-- Last_Name Input -->
         <label for="Last_Name">Last Name:</label>
         <input type="text" id="Last_Name" name="Last_Name" required>
-
+        <!-- Email Input -->
         <label for="Email">Email:</label>
         <input type="email" id="Email" name="Email" required>
-
+        <!-- Phone Input -->
         <label for="Phone">Phone:</label>
         <input type="tel" id="Phone" name="Phone" required>
-
+        <!-- Password Input -->
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-
+        <!-- Submit Button -->
         <button type="submit">Sign Up</button>
     </form>
 </div>
+<style>
+    /* Apply styles to the form container */
+    body {
+        background-image: url('https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTN8fHxlbnwwfHx8fHw%3D');
+        background-size: cover;
+        background-position: center;
+    }
+    /* Apply styles to the form container */
+    .signup-container {
+        background-color:#ffffff00;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        border: 1px solid #00000000;
+        border-radius: 5px;
+        
+        color: #0c10f2;
+        width: 35%;
+        margin: auto;
+        margin-top: 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Apply styles to the form */
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #fff;
+    }
+
+    /* Apply styles to the form labels */
+    .signup-form label {
+        margin-bottom: 8px;
+        text-align: center; 
+    }
+
+    /* Apply styles to the form inputs */
+    .signup-form input {
+        padding: 8px;
+        margin-bottom: 16px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        width: 88%;
+        align-self:-2 center; 
+    }
+
+    /* Apply styles to the submit button */
+    .signup-form button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        height: 30%;
+        width:92%;
+        align-self: -2 center;
+    }
+
+    /* Hover effect for the submit button */
+    .signup-form button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Align labels to the left */
+    .signup-form label {
+        text-align:left;
+    }
+</style>

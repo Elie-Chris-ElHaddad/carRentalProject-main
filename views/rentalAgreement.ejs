@@ -7,6 +7,28 @@
     </ul>
 </nav>
 <h1>Rental Agreements</h1>
+<button id="openFormButton">Fill out Rental Agreement</button>
+
+<div id="rentalAgreementFormContainer" style="display: none;">
+    <h2>Add a Car</h2>
+    <form id="rentalAgreementForm" action="api/rentalAgreement/addRentalAgreement" method="post">
+        <label for="User_ID">User_ID:</label>
+        <input type="number" id="User_ID" name="User_ID" required>
+
+        <label for="Car_ID">Car_ID:</label>
+        <input type="number" id="Car_ID" name="Car_ID" required>
+
+        <label for="Pick_up_Date">Pick_up_Datel:</label>
+        <input type="date" id="Pick_up_Date" name="Pick_up_Date" required>
+
+        <label for="Return_Date">Return_Date:</label>
+        <input type="date" id="Return_Date" name="Return_Date" required>
+
+        
+
+        <button type="submit">Add Rental Agreement</button>
+    </form>
+</div>
 <table id="agreementTable">
     <thead>
         <tr>
@@ -23,6 +45,7 @@
 </table>
 <script>
     // Fetch data from the API and populate the table
+
     fetch('/api/rentalAgreement/getAllRentalAgreements')
         .then(response => response.json())
         .then(data => {
@@ -47,6 +70,12 @@
         })
         .catch(error => console.error('Error fetching data:', error));
         
-    
+        const openFormButton = document.getElementById('openFormButton');
+        const rentalAgreementFormContainer = document.getElementById('rentalAgreementFormContainer');
+
+        openFormButton.addEventListener('click', () => {
+            rentalAgreementFormContainer.style.display = 'block';
+        });
+        
 
 </script>

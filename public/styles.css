@@ -22,7 +22,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #faf9f9;
     font-weight: bold;
 }
 
@@ -31,10 +31,9 @@ body {
 }
 
 .login-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff00;
+        background-size: cover;
+        background-position: center;
 }
 
 .login-form {
@@ -44,7 +43,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #fefefe;
+    color: #ffffff;
 }
 
 label {
@@ -73,27 +72,6 @@ button:hover {
 }
 
 
-/* ???????????? */
-
-/* public/styles/styles.css */
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-image: url('https://images.wallpaperscraft.com/image/single/land_rover_car_suv_190509_3840x2160.jpg');
-    background-size: cover;
-    background-position: center 0%; /* Adjusted position to bring the image down */
-    color: #000000;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: rgba(0, 0, 255, 0.5); /* Blue with 50% transparency */
-    color: #fff; /* White text */
-    text-align: center;
-    padding: 1em;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -111,16 +89,10 @@ main {
     padding: 20px;
 }
 
-section {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+
 
 h2 {
-    color: #fdfdfd;
+    color: #ffffff;
 }
 
 h3 {
