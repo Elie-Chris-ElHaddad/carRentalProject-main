@@ -73,10 +73,8 @@ const addUserController = async (req, res) => {
     // Add the new user to the database using the service
     const response = await addUser(Name, Last_Name, Email, Phone, password);
     // Send a JSON response with the newly added use
-    // res.status(200).json({ response });
     res.redirect('/dashboard');
   } catch (error) {
-    // Send a 500 Internal Server Error response with the error message
     res.status(500).json({ error });
   }
 };
@@ -140,7 +138,11 @@ const deleteUserController = async (req, res) => {
     res.status(500).json(error);
   }
 };
-// getUserLoginController function handles user login
+/**
+ * Handles the user login process.
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ */
 const getUserLoginController = async (req, res) => {
   try {
     // Extract email and password from the request body
@@ -163,6 +165,12 @@ const getUserLoginController = async (req, res) => {
   }
 };
 
+
+/**
+ * Verifies the validity of a JWT token.
+ * @param {string} token - The JWT token to be verified.
+ * @returns {object|null} - Decoded token if valid, null otherwise.
+ */
 const verifyToken = async(token)=>{
   try{
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
@@ -181,6 +189,5 @@ module.exports = {
   updateUserController,
   deleteUserController,
   getUserLoginController,
-  // authenticateToken,
   verifyToken
 };

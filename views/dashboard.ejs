@@ -1,3 +1,4 @@
+<!-- Navigation Bar -->
 <nav class="navbar">
     <ul class="nav-list">
         <li class="nav-item"><a href="/" class="nav-link">Logout</a></li>
@@ -5,11 +6,17 @@
         <li class="nav-item"><a href="/dashboard" class="nav-link">Cars</a></li>
     </ul>
 </nav>
+
+<!-- Heading -->
 <h1>List of Cars</h1>
+
+<!-- Button to Open Car Form -->
 <button id="openFormButton">Add a Car</button>
 
+<!-- Container for Car Form (Initially Hidden) -->
 <div id="carFormContainer" style="display: none;">
     <h2>Add a Car</h2>
+    <!-- Car Form -->
     <form id="carForm" action="api/car/addCar" method="post">
         <label for="Make">Make:</label>
         <input type="text" id="Make" name="Make" required>
@@ -30,6 +37,7 @@
     </form>
 </div>
 
+<!-- Table to Display Cars -->
 <table id="carTable">
     <thead>
         <tr>
@@ -70,6 +78,7 @@
         })
         .catch(error => console.error('Error fetching data:', error));
         
+        // Event listener for the button to open the form
         const openFormButton = document.getElementById('openFormButton');
         const carFormContainer = document.getElementById('carFormContainer');
 

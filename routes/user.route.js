@@ -40,6 +40,13 @@ router.get('/getAllUsers', userController.getAllUsersController);
  */
 router.post('/addUser', insertUserValidation,  userController.addUserController);
 
+/**
+ * Route to handle user login.
+ * @name post/getUserLogin
+ * @memberof module:Routes/User~userRouter
+ * @param {string} path - Express path.
+ * @param {Callback} middleware - Express middleware.
+ */
 router.post('/getUserLogin' , userController.getUserLoginController);
 
 /**

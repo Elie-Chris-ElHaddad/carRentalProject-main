@@ -1,4 +1,6 @@
+<!-- Stylesheet for Navbar -->
 <style>
+    /* Navbar Styles */
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -7,6 +9,7 @@
         background-color: #000; 
     }
 
+    /* Navigation List Styles */
     .nav-list {
         list-style-type: none;
         margin: 0;
@@ -15,30 +18,40 @@
         align-items: center;
     }
 
+    /* Navigation Item Styles */
     .nav-item {
         margin-right: 20px;
     }
-
+    /* Navigation Link Styles */
     .nav-link {
         text-decoration: none;
         color: #fff;
         font-weight: bold;
     }
-
+     /* Logo Styles */
     .logo img {
-        align-items: right; /* Push the logo to the right */
-        width:10%;
+        align-items: right; 
+        width:5%;
     }
 </style>
+
+<!-- Navbar HTML -->
 <nav class="navbar">
+    <!-- Navigation List -->
     <ul class="nav-list">
+        <!-- Logo Item -->
         <li class="nav-item logo">
+             <!-- Logo Link redirects us to the homepage-->
             <a href="/" class="nav-link">
-                <img src="https://www.zarla.com/images/zarla-omni-rental-1x1-2400x2400-20211115-3kr99wqyqqyccv3mkdrf.png?crop=1:1,smart&width=250&dpr=2">
+                <!-- Logo Image -->
+                <img src="https://static.vecteezy.com/system/resources/previews/000/655/315/original/red-sport-car-silhouette-with-reflection-on-black-background-vector.jpg">
             </a>
         </li>
+        <!-- Home Link -->
         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <!-- Login Link -->
         <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+        <!-- Signup Link -->
         <li class="nav-item"><a href="/signup" class="nav-link">Signup</a></li>
     </ul>
 </nav>

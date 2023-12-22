@@ -1,56 +1,67 @@
+/* Global styles for the body */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Navbar styles */
 .navbar {
     background-color: #000000;
     padding: 10px;
 }
 
+/* Navigation list styles */
 .nav-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
+/* Navigation item styles */
 .nav-item {
     display: inline-block;
     margin-right: 10px;
 }
 
+/* Navigation link styles */
 .nav-link {
     text-decoration: none;
     color: #faf9f9;
     font-weight: bold;
 }
 
+/* Navigation link hover effect */
 .nav-link:hover {
     color: #007bff;
 }
 
+/* Login container styles */
 .login-container {
     background-color: #ffffff00;
         background-size: cover;
         background-position: center;
 }
 
+/* Login form styles */
 .login-form {
     display: flex;
     flex-direction: column;
 }
 
+/* Heading 2 styles */
 h2 {
     text-align: center;
     color: #ffffff;
 }
 
+/* Label styles */
 label {
     margin-bottom: 8px;
     color: #ffffff;
 }
 
+/* Input styles */
 input {
     padding: 10px;
     margin-bottom: 16px;
@@ -58,6 +69,7 @@ input {
     border-radius: 4px;
 }
 
+/* Button styles */
 button {
     background-color: #007bff;
     color: #fff;
@@ -67,11 +79,12 @@ button {
     cursor: pointer;
 }
 
+/* Button hover effect */
 button:hover {
     background-color: #0056b3;
 }
 
-
+/* Additional navigation styles */z
 nav ul {
     list-style: none;
     padding: 0;
@@ -83,6 +96,7 @@ nav li {
     margin-right: 20px;
 }
 
+/* Main content styles */
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -90,41 +104,50 @@ main {
 }
 
 
-
+/* Heading 2 styles */
 h2 {
     color: #ffffff;
 }
 
+/* Heading 3 styles */
 h3 {
     color: #007bff;
 }
 
+
+/* Table styles */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
+/* Table cell styles */
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
+/* Table header styles */
 th {
     background-color: #000000;
     color:  #007bff;
 }
 
+
+/* Unordered list styles */
 ul {
     list-style: none;
     padding: 0;
 }
 
+/* List item styles */
 li {
     margin-bottom: 5px;
 }
 
+/* Button container styles */
 .button-container {
     text-align: center;
     margin-top: 20px;
@@ -140,8 +163,8 @@ button {
 }
 
 footer {
-    background-color: rgba(0, 0, 255, 0.5); /* Blue with 50% transparency */
-    color: #fff; /* White text */
+    background-color: rgba(0, 0, 255, 0.5); 
+    color: #fff;
     text-align: center;
     padding: 1em;
     position: fixed;
@@ -153,7 +176,6 @@ h1 {
     color: white;
 }
 
-/* CSS for making td background white */
 td {
     background-color: white;
 }
